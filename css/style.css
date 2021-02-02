@@ -1,0 +1,346 @@
+/* reset */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* main styling */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+    overflow-x : hidden
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width:400px;
+    border: 2px solid #d44e4e;
+}
+
+/* utilities */
+hr{
+    border: 1px solid #f4f4f4;
+    margin-top: 20px;
+}
+.btn{
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background:  #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: all .3s ease;
+}
+
+.btn:hover{
+    background: #d44e4e;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 20px auto 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, .1);
+}
+
+.sticky{
+    position: sticky;
+    background: #fff;
+    top: 0;
+}
+
+h1{
+    color:  #d44e4e;
+    padding: 10px 20px;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 10px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    background: #d44e4e;
+    color: #fff;
+    padding: 20px;
+}
+
+td{
+    top: 0;
+    width: 20%;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+td,th{
+    border-bottom: 1px solid #444;
+}
+
+
+.delete, .edit{
+    display: inline-block;
+    min-width: 150px;
+    height: 50px;
+    background:  #d44e4e;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    transition: all .3s ease;
+}
+
+.delete:hover,
+.edit:hover{
+    background: #fff;
+    color:  #d44e4e;
+}
+
+.movies{
+    color: #333;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    font-weight: 400;
+}
+
+.movies::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    width: 70px;
+    height: 3px;
+    background: #d44e4e
+}
+
+.movies::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 80px;
+    width: 70px;
+    height: 3px;
+    background: #d44e4e
+}
+
+/* Overlay */
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    display: none;
+    z-index: 1;
+}
+
+.overlay-open{
+    animation: overlay-fadein .4s ease forwards;
+}
+
+@keyframes overlay-fadein{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.overlay-close{
+    animation: overlay-fadeout .4s ease forwards;
+}
+
+@keyframes overlay-fadeout{
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+.card{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.card-fadein{
+    animation: card-fadein .4s ease forwards;
+}
+
+@keyframes card-fadein{
+    0%{top: -100px; opacity: 0;}
+    100%{top: 200px; opacity: 1;}
+}
+
+.card-fadeout{
+    animation: card-fadeout .4s ease forwards;
+}
+
+@keyframes card-fadeout{
+    0%{top: 200px; opacity: 1;}
+    100%{top: -200px; opacity: 0;}
+}
+
+.card .times{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 35px;
+    font-weight: 200;
+}
+
+.card .times a {
+    color: #333;
+}
+
+.card .times a:hover{
+    color: #d44e4e;
+}
+
+.card h2{
+    color: #d44e4e;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.card .movie-info{
+    width: 100%;
+}
+
+.card form{
+    width: 100%;
+}
+
+.card input{
+    width: 100%;
+    margin: 10px 0;
+    height: 45px;
+    border: none;
+    background: #f4f4f4;
+    border-radius: 5px;
+    padding: 0 20px;
+}
+
+.plus{
+    position: fixed;
+    top: 40px;
+    right: -100px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: #d44e4e;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 30px;
+    transition: all .4s ease;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.warning-wrapper{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    display: none;
+    z-index: 1;
+}
+
+#warning{
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    bottom: 50px;
+    right: 30px;
+    border-radius: 5px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    transition: all .3s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+.warning-fadein{
+    animation : warning-fade-in .4s ease forwards;
+}
+
+@keyframes warning-fade-in{
+    0%{opacity: 0; right: -100px;}
+    100%{opacity: 1; right: 30px;}
+}
+
+.success{
+    background: #58af58;
+}
+
+.error{
+    background: #d85a5a;
+}
+
+.warning-fadeout{
+    animation : warning-fade-out .4s ease forwards;
+}
+
+@keyframes warning-fade-out{
+    0%{opacity: 1; right: 30px;}
+    100%{opacity: 0; right: -100px;}
+}
+
+.delete-card{
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    background: #fff;
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    display: none;
+}
+
+.delete-card div{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.delete-card .btn{
+    width: 150px;
+    margin: 0 5px;
+}
+
+.delete-card h4{
+    top: 20px;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 10px;
+}
