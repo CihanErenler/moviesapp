@@ -1,71 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movies App</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div class="overlay">
-        <div class="delete-card">
-            <h4>Are you sure?</h4>
-            <div>
-                <a href="javascript:void(0)" class="btn confirm">Delete</a>
-                <a href="javascript:void(0)" class="btn cancel">Cancel</a>
-            </div>
+      <div class="delete-card">
+        <h4>Are you sure?</h4>
+        <div>
+          <a href="javascript:void(0)" class="btn confirm">Delete</a>
+          <a href="javascript:void(0)" class="btn cancel">Cancel</a>
         </div>
-        <div class="card">
-            <p class="times"><a href="javascript:void(0);">&times;</a></p>
-            <h2 class="movie-header">Add Movie</h2>
-            <div class="movie-info">
-                <form class="movie-form">
-                    <input type="text" id="movie-link" placeholder="Image link">
-                    <input type="text" id="movie-name" placeholder="Movie Name">
-                    <input type="text" id="movie-director" placeholder="Director">
-                    <a href="javascript:void(0)" class="btn add-list">Add Movie</a>
-                    <a href="javascript:void(0)" class="btn update" style="display: none;">Update</a>
-                </form>
-            </div>
+      </div>
+      <div class="card">
+        <p class="times"><a href="javascript:void(0);">&times;</a></p>
+        <h2 class="movie-header">Add Movie</h2>
+        <div class="movie-info">
+          <form class="movie-form">
+            <input type="text" id="movie-link" placeholder="Image link" />
+            <input type="text" id="movie-name" placeholder="Movie Name" />
+            <input type="text" id="movie-director" placeholder="Director" />
+            <a href="javascript:void(0)" class="btn add-list">Add Movie</a>
+            <a
+              href="javascript:void(0)"
+              class="btn update"
+              style="display: none"
+              >Update</a
+            >
+          </form>
         </div>
+      </div>
     </div>
     <div class="container">
-        <h1>Welcome to movies app</h1>
-        <a href="#" class="add-movie btn">Add Movie</a>
-        <hr>
-        <div class="sticky">
-            <h2 class="movies">Movies</h2>
-        </div>
-    
-            <table class="movie-list">
-                <thead>
-                    <tr>
-                        <th>Movie Poster</th>
-                        <th>Movie Name</th>
-                        <th>Diretor</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody class="movie-list-items">
-                    <!-- <tr>
-                        <td><img src="https://cdn.onebauer.media/one/empire-tmdb/films/75612/images/8TE77jL2e4zdERpv8hnBAHUmFRx.jpg?quality=50&width=1800&ratio=16-9&resizeStyle=aspectfill&format=jpg" alt=""></td>
-                        <td>Harry Potter</td>
-                        <td>David Yates</td>
-                        <td><a href="javascript:void(0);"  class="delete">Delete</a></td>
-                        <td><a href="javascript:void(0);" class="edit">Edit</a></td>
-                    </tr> -->
-                    
-                    
-                </tbody>
-            </table>
-        </div>
+      <h1>Welcome to movies app</h1>
+      <a href="#" class="add-movie btn">Add Movie</a>
+      <hr />
+      <div class="sticky">
+        <h2 class="movies">Movies</h2>
+      </div>
 
-        <div onclick="fadein()" class="plus">+</div>
-        <div class="warning-wrapper"></div>
+      <table class="movie-list">
+        <thead>
+          <tr>
+            <th>Movie Poster</th>
+            <th>Movie Name</th>
+            <th>Diretor</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="movie-list-items">
+          <tr>
+            <td>
+              <img
+                src="https://georgetownvoice.com/wp-content/uploads/2015/01/Interstellar1.jpg"
+                alt=""
+              />
+            </td>
+            <td>Interstaller</td>
+            <td>Cristopher Nolan</td>
+            <td><a href="javascript:void(0);" class="delete">Delete</a></td>
+            <td><a href="javascript:void(0);" class="edit">Edit</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div onclick="fadein()" class="plus">+</div>
+    <div class="warning-wrapper"></div>
     <script src="ui.js"></script>
     <script src="storage.js"></script>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
